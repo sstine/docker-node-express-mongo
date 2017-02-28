@@ -38,3 +38,9 @@ docker-compose logs -f
 ```bash
 docker-compose down
 ```
+
+
+##### Install and save NPM packages
+```bash
+docker-compose run --rm api npm --save <PACKAGE_NAME>
+```
