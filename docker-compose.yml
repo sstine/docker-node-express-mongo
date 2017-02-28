@@ -1,0 +1,17 @@
+version: '2'
+services:
+    api:
+        command: npm start
+        restart: unless-stopped
+        build:
+            context: ./
+        volumes: 
+            - ./:/usr/src/app
+        ports:
+            - 8080:8080
+        links:
+            - mongo:mongo
+    mongo: 
+        image: mongo:3.4.1
+        ports:
+            - "127.0.0.1:27018:27017"
